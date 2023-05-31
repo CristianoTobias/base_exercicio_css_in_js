@@ -1,9 +1,15 @@
 import { useState } from 'react'
+import styled from 'styled-components'
 import FormVagas from '../../components/FormVagas'
 
 import Vaga from '../../components/Vaga'
+import { VagaStyle } from '../../components/Vaga/style'
+import { VagasStyles } from './style'
 
-import styles from './ListaVagas.module.css'
+const MainContainer = styled.div`
+  max-width: 1024px;
+  margin: 0 auto;
+`
 
 type Vaga = {
   id: string
@@ -97,9 +103,9 @@ const ListaVagas = () => {
   )
 
   return (
-    <div>
+    <MainContainer>
       <FormVagas aoPesquisar={(termo: string) => setFiltro(termo)} />
-      <ul className={styles.vagas}>
+      <VagasStyles>
         {vagasFiltradas.map((vag) => (
           <Vaga
             key={vag.id}
@@ -112,8 +118,8 @@ const ListaVagas = () => {
             requisitos={vag.requisitos}
           />
         ))}
-      </ul>
-    </div>
+      </VagasStyles>
+    </MainContainer>
   )
 }
 
