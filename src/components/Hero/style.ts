@@ -42,6 +42,6 @@ export const HeroStyle = styled.div`
   }
 
   @media (max-width: 1024px) {
-    max-width: 80%;
+    padding: 10px;
   }
 `
